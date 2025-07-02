@@ -1,0 +1,17 @@
+
+* {
+  box-sizing: border-box;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+select::picker-icon{
+  color: #999;
+  transition: 0.4s rotate;
+}
+
+select:open::picker-icon{
+  rotate: 180deg;
+}
