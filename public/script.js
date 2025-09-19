@@ -9,7 +9,7 @@ let voice = [];
 function loadVoices(){
   // Get the voices
   voices = speechSynthesis.getVoices();
-  // Output voices as options with voice name and lang
+  // Output voices as options with voice name and lang, .join to change to string
   voiceSelect.innerHTML = voices.map((voice, index)=> `<option value="${index}">${voice.name} (${voice.lang})</option>`).join('');
 }
 
