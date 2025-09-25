@@ -15,12 +15,18 @@ function loadVoices(){
 
 // Trigger loading voices when they become available
 speechSynthesis.onvoiceschanged = loadVoices;
-// Or load initially
+// Loadvoices when onvoiceschanged
 loadVoices();
 
 // Play TTS - Type to Speech Conversion
 playButton.addEventListener('click', () => {
   const utterance = new SpeechSynthesisUtterance(textInput.value);
+  // Setting selectedVoice from user selection
+  const selectedVoice = voices[voiceSelect.value];
+  // Changing the voice based on selection 
+  if(selectedVoice){
+    utterance.voice = selectedVoice; 
+  }
   // taking the value that is in variable utterance for it to speak
   speechSynthesis.speak(utterance);
 })
