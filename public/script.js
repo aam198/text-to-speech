@@ -2,7 +2,16 @@ const voiceSelect = document.querySelector('#voiceSelect')
 const playButton = document.querySelector('#playButton')
 const textInput = document.querySelector('textarea')
 
-// Load an Options list of available voices 
+// Array of objects with supported languages and ISO codes
+const languages = [
+  { code: 'en', name: 'English'},
+  { code: 'es', name: 'Spanish'},
+  { code: 'fr', name: 'French'},
+  { code: 'de', name: 'German'},
+  { code: 'it', name: 'Italian'},
+  { code: 'ja', name: 'Japanese'},
+  { code: 'zh-CN', name: 'Chinese (Simplified)'},
+]
 
 // Array that is empty 
 let voice = [];
