@@ -1,8 +1,9 @@
-const voiceSelect = document.querySelector('#voiceSelect')
-const playButton = document.querySelector('#playButton')
-const textInput = document.querySelector('textarea')
+const voiceSelect = document.querySelector('#voiceSelect');
+const playButton = document.querySelector('#playButton');
+const textInput = document.querySelector('textarea');
+const languageSelect = document.querySelector('#languageSelect');
 
-// Array of objects with supported languages and ISO codes
+// Array of objects with supported languages and ISO codes to populate
 const languages = [
   { code: 'en', name: 'English'},
   { code: 'es', name: 'Spanish'},
@@ -11,7 +12,16 @@ const languages = [
   { code: 'it', name: 'Italian'},
   { code: 'ja', name: 'Japanese'},
   { code: 'zh-CN', name: 'Chinese (Simplified)'},
-]
+];
+
+// Populate language selection with array, then object destructuing for code and name
+languages.forEach(({ code, name }) => {
+  const option = document.createElement('option');
+  // Fill option 
+  option.value = code;
+  option.textContent = name;
+  languageSelect.appendChild(option);
+})
 
 // Array that is empty 
 let voice = [];
