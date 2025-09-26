@@ -21,7 +21,7 @@ languages.forEach(({ code, name }) => {
   option.value = code;
   option.textContent = name;
   languageSelect.appendChild(option);
-})
+});
 
 // Array that is empty 
 let voice = [];
